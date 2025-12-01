@@ -46,7 +46,7 @@ composer require firebase/php-jwt
 
 A aplicação ficará acessível em:
 
-http://localhost/lista\_tarefas
+http://localhost/lista_tarefas
 
 
 
