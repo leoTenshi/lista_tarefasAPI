@@ -8,9 +8,10 @@ class UsuarioService
     {
         $this->dao = new UsuarioDAO();
     }
-
+    
     public function login(string $email, string $senha)
     {
+        //Exemplo do trycatch com redudância
         try {
             $usuario = $this->dao->buscarPorEmailSenha($email, $senha);
 
@@ -24,3 +25,4 @@ class UsuarioService
         }
     }
 }
+
