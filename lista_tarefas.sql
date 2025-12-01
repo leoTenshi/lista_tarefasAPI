@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS tarefas (
     id INT AUTO_INCREMENT PRIMARY KEY,
     titulo VARCHAR(150) NOT NULL,
     descricao TEXT,
-    status ENUM('pendente','em_andamento','concluida') DEFAULT 'pendente',
+    status ENUM('pendente','em_andamento','concluida') DEFAULT 'pendente' NOT NULL,
     usuario_id INT NOT NULL,
     categoria_id INT,
     FOREIGN KEY (usuario_id) REFERENCES usuarios(id),
