@@ -28,7 +28,7 @@ Todas as operações que lidam com tarefas e categorias exigem token de autentic
 
 Clonar este repositório dentro do XAMPP:
 
-D:\\xampp\\htdocs\\lista\_tarefas
+D:\\xampp\\htdocs\\lista_tarefas
 
 
 
