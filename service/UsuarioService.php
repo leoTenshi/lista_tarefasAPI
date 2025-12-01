@@ -15,12 +15,12 @@ class UsuarioService
             $usuario = $this->dao->buscarPorEmailSenha($email, $senha);
 
             if (!$usuario) {
-                throw new Exception("Usuário ou senha inválidos");
+                throw new Exception("Email ou senha inválidos", 401);
             }
 
             return $usuario;
         } catch (Exception $e) {
-            throw new Exception($e->getMessage());
+            throw new Exception($e->getMessage(), (int)$e->getCode());
         }
     }
 }

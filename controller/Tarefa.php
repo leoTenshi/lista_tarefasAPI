@@ -26,10 +26,7 @@ class Tarefa {
         ];
 
         $resultado = $service->inserir($dados);
-        return [
-        'mensagem' => 'Tarefa inserida com sucesso',
-        'data' => null
-    ];
+        return ['mensagem' => 'Tarefa inserida com sucesso'];
     }
 
     public function alterarStatus($id, $status) {
@@ -37,10 +34,7 @@ class Tarefa {
         Auth::validarToken(); 
         $service = new TarefaService();
         $resultado = $service->atualizarStatus($id, $status);
-        return [
-        'mensagem' => 'Status alterado com sucesso',
-        'data' => null
-    ];
+        return ['mensagem' => 'Status alterado com sucesso'];
     }
 
     public function excluir($id) {
@@ -48,9 +42,6 @@ class Tarefa {
         Auth::validarToken(); 
         $service = new TarefaService();
         $resultado = $service->excluir($id);
-        return [
-        'mensagem' => 'Tarefa deletada com sucesso',
-        'data' => null
-    ];
+        return ['mensagem' => 'Tarefa deletada com sucesso'];
     }
 }

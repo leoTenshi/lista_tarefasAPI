@@ -22,7 +22,6 @@ class Login
 
             return ['token' => $token];
         } catch (Exception $e) {
-            // sobe erro para ser tratado em Rotas
             throw new Exception($e->getMessage());
         }
     }

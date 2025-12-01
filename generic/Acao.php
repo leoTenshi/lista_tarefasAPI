@@ -32,7 +32,7 @@ class Acao {
                         if ($v->isDefaultValueAvailable()) {
                             $para[] = $v->getDefaultValue();
                         } else {
-                            throw new Exception("Parâmetro(s) obrigatório(s) ausente(s) na requisição.");
+                            throw new Exception("Parâmetro(s) obrigatório(s) ausente(s) na requisição.", 400);
                         }
                     } else {
                         $para[] = $returnParam[$name];

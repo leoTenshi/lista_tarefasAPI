@@ -27,8 +27,7 @@ class Auth
         $headers = getallheaders();
 
         if (!isset($headers['Authorization'])) {
-            header("Content-Type: application/json; charset= utf-8");
-            exit(json_encode(['erro' => 'Acesso não autorizado!']));
+            throw new Exception('Acesso não autorizado! Token ausente.', 401);
         }
 
         $token = str_replace('Bearer ', '', $headers['Authorization']);
@@ -37,8 +36,7 @@ class Auth
             $decodificado = JWT::decode($token, new Key(self::$chave_secreta, 'HS256'));
             return $decodificado;
         } catch (Exception $e) {
-            header("Content-Type: application/json; charset= utf-8");
-            exit(json_encode(['erro' => 'Acesso não autorizado!']));
+            throw new Exception('Acesso não autorizado! Token inválido.', 401);
         }
     }
 }
