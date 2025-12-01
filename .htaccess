@@ -1,0 +1,9 @@
+RewriteEngine On
+#define a base do diretório para as reescritas
+RewriteBase /lista_tarefas/ 
+#verifica se o que o usuário pediu é um arquivo, só será aplicada a regra de URL amigável se a NÃO for um arquivo
+RewriteCond %{REQUEST_FILENAME} !-f 
+#verifica se o que o usuário pediu é uma pasta, só será aplicada a regra da URL se NÃO for uma pasta
+RewriteCond %{REQUEST_FILENAME} !-d 
+#a regra é essa, o htaccess pega tudo com '^(.*)$' - joga tudo pra index - a index decide a "troca" a URL
+RewriteRule ^(.*)$ index.php?param=$1 [L,QSA] 
